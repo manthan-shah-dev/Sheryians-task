@@ -99,7 +99,7 @@ h2 {
     color: white;
 }
 
-h3{
+.bottom h3{
     margin-top: 20px;
 }
 
@@ -151,3 +151,52 @@ hr {
 margin-bottom: 10px;
 }
 
+.hr{
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgb(227,116,1),
+        transparent
+    );
+    margin: 10px;
+    width: 100%;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+    height: 5%;
+}
+.footer-left{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+.footer-center{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.footer-left h3{
+    display: inline-block;
+}
+
+.follow{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+.icon{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgb(227,116,1);
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
