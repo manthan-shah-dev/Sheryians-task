@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+    background-color:  rgb(35,35,35);
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: grid;
+  
+background-color: rgb(35,35,35);
+
+/* grid-template-columns: 2.3fr 2.3fr 1.2fr 1.8fr 2.4fr;
+grid-template-rows: 1fr 3fr 2fr 2fr 2.5fr 2fr; */
+grid-template-columns: 2.3fr 2.3fr 1.6fr 1.8fr 2fr;
+
+grid-template-rows: 2fr 2.5fr 2fr 2fr 2.5fr 2fr;
+padding: 5px;
+gap: 10px;
+box-sizing: border-box;
+ 
+  grid-template-areas:
+    "ltop       ltop       ctop1     ctop2     rtop1"
+    "ltop       ltop       ctop1     ctop2     Rcenter1"
+    "Lcenter1   Lcenter2   CCenter    CCenter   Rcenter1"
+    "Lcenter1   Lcenter2   CCenter    CCenter   Rcenter2"
+    "Lcenter1   Lcenter2   CCenter    CCenter   Rcenter2"
+    "Lbottom    Lbottom    Lbottom    Rbottom   Rbottom";
+ 
+    
+    border: 2px solid  rgb(14,14,14);
+}
+
+
+.Left-TOP{
+    border: 2px solid  rgb(14,14,14);
+    grid-area: ltop;
+    border-radius: 20px;
+}
+.Left-Center1{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: Lcenter1;
+    border-radius: 20px;
+}
+.Left-Center2
+{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: Lcenter2;
+    border-radius: 20px;
+}
+.Left-bottom{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: Lbottom;
+    border-radius: 20px;
+}
+.Center-TOP1{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: ctop1;
+    border-radius: 20px;
+}
+
+.Center-TOP2{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: ctop2;
+    border-radius: 20px;
+}
+.Center-Center{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: CCenter;
+    border-radius: 20px;
+}
+.Right-TOP1{
+    /* border-radius: 20px;
+    border: 2px solid  rgb(14,14,14); */
+    grid-area: rtop1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-areas:
+    "rtop1 rtop2 rtop3"
+    "rtop4 rtop5 rtop6"
+    ;
+    padding:5px;
+    gap: 5px;
+    box-sizing: border-box;
+}
+.Right-TOP2{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: rtop2;
+    border-radius: 10px;
+}
+.Right-TOP11{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: rtop1;
+    border-radius: 10px;
+}
+.Right-TOP3{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: rtop3;
+    border-radius: 10px;
+}
+.Right-TOP4{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: rtop4;
+    border-radius: 10px;
+}
+.Right-TOP5{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: rtop5;
+    border-radius: 10px;
+}
+.Right-TOP6{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: rtop6;
+    border-radius: 10px;
+}
+.Right-Center1{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: Rcenter1;
+    border-radius: 20px;
+}
+.Right-Center2{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: Rcenter2;
+    border-radius: 20px;
+}
+.Right-bottom{
+    
+    border: 2px solid  rgb(14,14,14);
+    grid-area: Rbottom;
+    border-radius: 20px;
+}
