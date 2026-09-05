@@ -46,34 +46,36 @@ const darkModeToggle = document.getElementById("darkModeToggle");
 
 function applyDarkMode(isDark) {
 
-    if (isDark) {
+   if (isDark) {
 
-        document.body.style.backgroundColor = "#111827";
-        document.body.style.color = "#f3f4f6";
+    document.body.style.backgroundColor = "#1C1714";
+    document.body.style.color = "#FFF8E7";
 
-        document.querySelector("nav").style.backgroundColor = "#1f2937";
+    document.querySelector("nav").style.backgroundColor = "#241C18";
 
-        document.querySelector("side").style.backgroundColor = "#1f2937";
-        document.querySelector(".section-1").style.backgroundColor = "#111827";
+    document.querySelector("side").style.backgroundColor = "#241C18";
+    document.querySelector(".section-1").style.backgroundColor = "#1C1714";
 
-        document.querySelectorAll(".serach,.card, .table-container,.graph, .Preferences, .table,.Logout,table").forEach(element => {
-            element.style.backgroundColor = "#1f2937";
-            element.style.color = "#f3f4f6";
-        })
+    document.querySelectorAll(".serach,.card, .table-container,.graph, .Preferences, .table,.Logout,table").forEach(element => {
+        element.style.backgroundColor = "#2B211C";
+        element.style.color = "#FFF8E7";
+    });
 
-    } else {
-        document.body.style.backgroundColor = "#f8f9fb";
-        document.body.style.color = "#111827";
+} else {
 
-        document.querySelector(".section-1").style.backgroundColor = "#f8f9fb";
-        document.querySelector("nav").style.backgroundColor = "#ffffff";
+    document.body.style.backgroundColor = "#FFF8E7";
+    document.body.style.color = "#4A2C20";
 
-        document.querySelector("side").style.backgroundColor = "#ffffff";
+    document.querySelector(".section-1").style.backgroundColor = "#FFF8E7";
+    document.querySelector("nav").style.backgroundColor = "#FFF8E7";
 
-        document.querySelectorAll(".serach,.card,.table-container, .graph, .Preferences, .table,.Logout,table").forEach(element => {
-            element.style.backgroundColor = "#ffffff";
-            element.style.color = "#111827";
-        });
+    document.querySelector("side").style.backgroundColor = "#FFF8E7";
+
+    document.querySelectorAll(".serach,.card,.table-container, .graph, .Preferences, .table,.Logout,table").forEach(element => {
+        element.style.backgroundColor = "#FFFDF7";
+        element.style.color = "#4A2C20";
+    });
+
     }
 }
 
@@ -321,12 +323,12 @@ function createChart(transactions) {
                 {
                     label: "Income",
                     data: incomeData,
-                    backgroundColor: "#166534"
+                    backgroundColor: "#C68A3A"
                 },
                 {
                     label: "Expenses",
                     data: expenseData,
-                    backgroundColor: "#991b1b"
+                    backgroundColor: "#A23E48"
                 }
             ]
         },
