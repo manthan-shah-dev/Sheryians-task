@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="overal" style="display: none;">
+        <div class="pag1">
+            <nav>
+                <div class="logo">
+                    <div class="logo-div">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div class="text">
+                        <h2>FinTrack Pro</h2>
+                        <p>Enterprise Finance</p>
+                    </div>
+                </div>
+                <div class="sign-in">
+                    <h2 id="username">Username</h2>
+                    <button class="Logout" style="cursor: pointer;">
+                        <i class="fa-solid fa-right-from-bracket"> </i>
+                        <h4>Logout</h4>
+
+                    </button>
+                </div>
+            </nav>
+            <side>
+
+                <div class="button">
+                    <button class="Dashboardbtn">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                        <span>Dashboard</span>
+                    </button>
+                    <button class="settingbtn">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </button>
+                </div>
+                <button class="transactionbtn">
+                    <i class="fa-solid fa-plus"></i>
+                    <span> Add Transaction</span>
+                </button>
+
+            </side>
+            <page-1>
+                <Dashboard>
+                    <section class="section-1">
+                        <div class="top-text">
+                            <h1>Financial Overview</h1>
+                            <p style="color: #444;">Real-time tracking application</p>
+                        </div>
+                        <div class="overView-cards">
+                            <div class="card">
+                                <div class="card-img">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                                <p>Current Balance</p>
+                                <h3>₹0.00</h3>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                </div>
+                                <p>Total Income</p>
+                                <h3 class="income">₹0.00</h3>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="" alt=""><i class="fa-solid fa-arrow-trend-down"></i>
+
+                                </div>
+                                <p>Total Expense</p>
+                                <h3 class="Expense">₹0.00</h3>
+                            </div>
+                            <div class="card">
+                                <div class="card-img"><i class="fa-solid fa-piggy-bank"></i>
+                                </div>
+                                <p>Total Transactions</p>
+                                <h3>0</h3>
+                            </div>
+                        </div>
+
+                        <div class="graph-Preferences">
+                            <div class="graph">
+                                <canvas id="transactionChart"></canvas>
+                            </div>
+                            <div class="Preferences">
+                                <h3>Preferences</h3>
+                                <div class="mode">
+                                    <h4>Dark Mode</h4>
+                                    <input type="checkbox" id="darkModeToggle">
+                                </div>
+                                <button id="resetDataBtn" class="btn-outline full-width text-red mt-1"
+                                    style="padding: 2px ;border-radius: 5px; border: 0.4px solid #b34848; background-color: #fff5f5; color: #991b1b; cursor: pointer; width: 100%;">
+                                    <i class="fa-solid fa-trash"></i> Reset All Data
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table">
+                            <h2>All Transactions</h2>
+                            <div class="serach">
+                                <div class="serach-bar">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="search" id="searchInput" placeholder="Search transactions...">
+
+                                </div>
+                                <select id="typeFilter">
+                                    <option value="all">All Types</option>
+                                    <option value="income">Income Only</option>
+                                    <option value="expense">Expense Only</option>
+                                </select>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <tr>
+                                        <th>DATE</th>
+                                        <th>DESCRIPTION</th>
+                                        <th>CATEGORY</th>
+                                        <th>AMOUNT</th>
+                                        <th>ACTIONS</th>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    </main1>
+
+                </Dashboard>
+            </page-1>
+
+            <div class="setting">
+                <div class="pag2-top">
+                    <h2>Settings</h2>
+                    <p>Manage your account profile and app formatting.</p>
+                </div>
+                <section class="section-2">
+
+                    <h2>Profile Details</h2>
+                    <form action="" class="settingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Enter Username">
+                            </div>
+                            <div class="form-group">
+                                <label>Primary Currency</label>
+                                <select id="settingCurrency" required="">
+                                    <option value="$">USD ($)</option>
+                                    <option value="€">EUR (€)</option>
+                                    <option value="£">GBP (£)</option>
+                                    <option value="₹">INR (₹)</option>
+                                    <option value="¥">JPY (¥)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button>Save Changes</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="transaction">
+                <div class="section-3">
+                    <div class="close-add">
+                        <h2 style="font-weight: 700;">Add Transaction</h2>
+                        <h4 class="closebtn" style="cursor: pointer;">X</h4>
+                    </div>
+                    <form action="" class="Transactionform">
+                        <div class="form-group1">
+                            <label>Type</label>
+                            <select id="txType" required="">
+                                <option value="expense">Expense</option>
+                                <option value="income">Income</option>
+                            </select>
+                        </div>
+                        <div class="form-group1">
+                            <label>Description</label>
+                            <input type="text" id="txDescription" placeholder="e.g. Amazon, Salary, Coffee" required="">
+                        </div>
+                        <div class="form-row1">
+                            <div class="form-group">
+                                <label>Amount</label>
+                                <input type="number" id="txAmount" step="0.01" min="0" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" id="txDate" required="">
+                            </div>
+                        </div>
+                        <div class="form-group1">
+                            <label>Category</label>
+                            <select id="txCategory" required="">
+                                <option value="" disabled="" selected="">Select a category</option>
+                                <option value="Food &amp; Dining">Food &amp; Dining</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Recharge &amp; Bills">Recharge &amp; Bills</option>
+                                <option value="Petrol &amp; Auto">Petrol &amp; Auto</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Salary">Salary</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary full-width mt-1 " style="cursor: pointer;">Save
+                            Transaction</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page2">
+        <div class="main1" id="Login">
+            <div class="text">
+                <h2>Welcome Back</h2>
+                <label>Login to FinTrack Pro</label>
+            </div>
+            <form class="login-form">
+                <div class="form-group2">
+                    <label >Username</label>
+                    <input type="text" class="username" required>
+                </div>
+                <div class="form-group2">
+                    <label >Password</label>
+                    <input type="password" class="password" required>
+                </div>
+                <button class='login'>Login</button>
+            </form>
+            <div class="text">
+                <label style="font-size:14px ;">Don't have an account? <a  class='Switch'
+                        style="color: #0056b3; text-decoration: none;">Register
+                        here</a></label>
+            </div>
+        </div>
+        <div class="main1" id="Register" style="display: none;">
+            <div class="text">
+                <h2>Create Account</h2>
+                <label>Join FinTrack Pro</label>
+            </div>
+            <form class="login-form" id="Register-form">
+                <div class="form-group2">
+                    <label >Username</label>
+                    <input type="text" class="username" required>
+                </div>
+                <div class="form-group2">
+                    <label >Password</label>
+                    <input type="text" class="password" required>
+                </div>
+                <button class='login' style="background-color: #28a745;">Register</button>
+            </form>
+            <div class="text">
+                <label style="font-size:14px ;">Already have an account? <a  class='Switch'
+                        style="color: #0056b3; text-decoration: none;">Register here</a></label>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="script1.js"></script> -->
+</body>
+
+</html>

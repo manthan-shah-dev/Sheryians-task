@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <nav>
+            <h1>E-comm</h1>
+            <button id="Create">Create Product</button>
+        </nav>
+        <div class="products">
+            <div class="product-card">
+                <div class="img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn-IzAYiP3DEnyS-7svDsa37RxhhfxfAbAHgob8NgTOEe_tvi3cEJXSM8&s"
+                        alt="image">
+                </div>
+                <div class="text">
+                    <h3>Name</h3>
+                    <p>description</p>
+                    <p>price</p>
+                </div>
+
+                <div class="btns">
+                    <button onclick="updateProduct('${elem.id}')" id="update">Update</button>
+                    <button onclick="deleteProduct('${index}')" id="delete">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form">
+            <div class="top">
+                <div></div>
+                <h1 id="close">X</h1>
+            </div>
+            <form>
+                <h1>create product</h1>
+                <input type="text" placeholder="product name">
+                <input type="text" placeholder="description">
+                <input type="number" placeholder="Price">
+                <input type="url" placeholder="image url">
+                <button>Create</button>
+            </form>
+        </div>
+    </main>
+    <script src="script1.js"></script>
+</body>
+
+</html>
