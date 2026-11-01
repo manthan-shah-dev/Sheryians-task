@@ -1,0 +1,29 @@
+import React, { useContext } from "react";
+import Home from "./Pages/Home";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import Footer2 from "./Components/Footer2";
+import Lowerfooter from "./Components/Lowerfooter";
+import AppRoutes from "./Routes/AppRoutes";
+import LoginRoutes from "./Routes/LoginRoutes";
+import {login} from "./context/Login";
+const App = () => {
+  // const login = false;
+ const {LoginState}= useContext(login)
+  return (
+    <div className="bg-[#050817] ">
+      {LoginState ? (
+        <div>
+          <Navbar />
+          <AppRoutes />
+          <Lowerfooter />
+        </div>
+      ) : (
+        
+      <LoginRoutes/>
+      )}
+    </div>
+  );
+};
+
+export default App;

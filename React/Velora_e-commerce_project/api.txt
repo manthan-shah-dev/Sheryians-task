@@ -1,0 +1,169 @@
+products:https://api.escuelajs.co/api/v1/products
+
+https://dummyjson.com/products
+
+Categoryhttps://api.escuelajs.co/api/v1/categories
+
+blob:https://chatgpt.com/2ada1935-df05-4c5d-bc58-f3869b0ff9d2
+
+
+
+
+src/
+├── assets/
+│   └── images/
+│       └── logo.png
+│
+├── Components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── ProductCard.jsx
+│   ├── ProductGrid.jsx
+│   ├── CategoryCard.jsx
+│   ├── SearchBar.jsx
+│   ├── FilterPanel.jsx
+│   ├── CartItem.jsx
+│   ├── OrderSummary.jsx
+│   ├── Loader.jsx
+│   ├── ErrorMessage.jsx
+│   └── ProtectRoute.jsx
+│
+├── Pages/
+│   ├── Home.jsx
+│   ├── Shop.jsx
+│   ├── ProductDetail.jsx
+│   ├── Cart.jsx
+│   ├── Wishlist.jsx
+│   ├── Login.jsx
+│   ├── Signup.jsx
+│   ├── About.jsx
+│   ├── Checkout.jsx
+│   └── NotFound.jsx
+│
+├── Context/
+│   ├── ProductContext.jsx
+│   ├── CartContext.jsx
+│   ├── WishlistContext.jsx
+│   └── AuthContext.jsx
+│
+├── Routes/
+│   └── AppRoutes.jsx
+│
+├── Hooks/
+│   └── useProducts.js
+│
+├── Utils/
+│   ├── formatPrice.js
+│   └── filterProducts.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+
+Folder/file	Purpose
+Components/	Reusable UI components
+Pages/	Complete pages such as Home, Shop and Cart
+Context/	Global state for products, cart, wishlist and authentication
+Routes/	React Router configuration
+Hooks/	Reusable logic, such as fetching products
+Utils/	Helper functions
+assets/	Images and other local assets
+App.jsx	Main app component
+main.jsx	React entry point and providers
+index.css	Tailwind CSS import and global styles
+
+
+
+
+or your Velora dark-theme e-commerce project, use this color palette with Tailwind CSS v4. It matches your violet, blue, and cyan logo.
+1. Main color palette
+
+Main Background
+Website background
+
+#080B14
+
+Surface
+Cards and sections
+
+#111827
+
+Elevated Surface
+Inputs, dropdowns and panels
+
+#1E293B
+
+Primary Violet
+Primary buttons and links
+
+#7C3AED
+
+Violet Hover
+Button hover states
+
+#8B5CF6
+
+Accent Blue
+Secondary highlights
+
+#3B82F6
+
+Accent Cyan
+Icons and small highlights
+
+#22D3EE
+
+Primary Text
+Headings and important text
+
+#F8FAFC
+
+Secondary Text
+Descriptions and muted text
+
+#94A3B8
+
+Border
+Cards and separators
+
+#273449
+
+Success
+Success messages
+
+#22C55E
+
+Error
+Error messages
+
+#F87171
+
+2. Tailwind CSS class examples
+Purpose	Tailwind class
+Main background	bg-[#080B14]
+Card background	bg-[#111827]
+Input background	bg-[#1E293B]
+Primary button	bg-violet-600
+Button hover	hover:bg-violet-500
+Main heading	text-slate-50
+Description	text-slate-400
+Border	border-white/10
+Accent icon	text-cyan-400
+Success text	text-green-400
+Error text	text-red-400
+3. Gradient colors
+Use gradients for the logo area, hero heading, and promotional sections.
+Primary gradient
+
+bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-400
+Hero background gradient
+
+bg-gradient-to-br from-[#111827] via-indigo-950 to-cyan-950
+
+4. Recommended usage
+- 70% — dark backgrounds (#080B14, #111827)
+- 20% — surfaces, borders and muted text
+- 10% — violet, blue and cyan accents
+Keep most sections dark, use violet for primary actions, and reserve cyan for small highlights. This makes Velora look modern without making every element glow.
