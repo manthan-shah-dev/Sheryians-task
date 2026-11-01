@@ -6,7 +6,7 @@ import ProductContext from "./context/ProductContext.jsx";
 import CategoryContext from "./context/CategoryContext.jsx";
 import TopratedProduct from "./context/TopratedProduct.jsx";
 import Categoriesdata from "./context/Categoriesdata.jsx";
-import UserCart from "./context/UserCart.jsx";
+import UserCart from "../context/UserCart.jsx";
 import Login from "./context/Login.jsx";
 
 createRoot(document.getElementById("root")).render(
