@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { NavLink } from "react-router";
-import { user } from "../context/userCart";
+import { user } from "../context/UserCart";
 import { login } from "../context/Login";
 
 const Cart = ({ isCartOpen }) => {
@@ -18,8 +18,8 @@ const Cart = ({ isCartOpen }) => {
   };
   const { products, setfirstproducts, totalprice, settotalprice } =
     useContext(user);
-  const {users,form,setform, detail, setdetail, LoginState, setLoginState } = useContext(login);
-
+  const { users, form, setform, detail, setdetail, LoginState, setLoginState } =
+    useContext(login);
 
   const inupdatecount = (product) => {
     const newproduct = products.map((val) =>
