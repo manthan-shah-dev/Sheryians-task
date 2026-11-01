@@ -11,7 +11,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 
-import { user } from "../context/userCart";
+import { user } from "../context/UserCart";
 
 const ProductDetails = () => {
   const { id } = useParams();

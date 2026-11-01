@@ -1,6 +1,6 @@
 import { Package, Star, Tag, TrendingUp } from "lucide-react";
 import React, { useContext } from "react";
-import { user } from "../context/userCart";
+import { user } from "../context/UserCart";
 
 const Footer = () => {
   const {totalprice}=  useContext(user);

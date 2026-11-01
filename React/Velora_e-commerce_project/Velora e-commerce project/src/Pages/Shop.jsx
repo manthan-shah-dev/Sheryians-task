@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { auth } from "../context/ProductContext";
 import { cat } from "../context/CategoryContext";
 import { CategoriesDataContext } from "../context/Categoriesdata";
-import { user } from "../context/userCart";
+import { user } from "../context/UserCart";
 import { Navigate, useNavigate } from "react-router";
 import { login } from "../context/Login";
 const Shop = () => {
