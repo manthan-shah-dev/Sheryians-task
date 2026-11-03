@@ -1,9 +1,11 @@
 import { ArrowBigDown, MoveRight } from "lucide-react";
-import React from "react";
+import React, { useContext } from "react";
 import Footer from "../Components/Footer";
 import Footer2 from "../Components/Footer2";
+import { login } from "../context/Login";
 
 const Home = () => {
+  const {data}=useContext(login)
   return (
     <div>
       <div className="bg-black mx-auto p-10 flex gap-5 font-['Clash_Display',Syne,sans-serif] w-[80%] items-center border border-[#7b7c5c] rounded-2xl h-[70%] justify-between">
@@ -12,9 +14,9 @@ const Home = () => {
           <h1 className=" text-[36px] leading-[40px] font-bold   text-[#F9FAFB]">
             Welcome back,
           </h1>
-          <h1 className=" text-[36px] leading-[40px] font-bold   text-[#7C3AED]">
-            MANTHAN!
-          </h1>
+      <h1 className="text-[36px] leading-[40px] font-bold text-[#7C3AED]">
+  {data?.name?.toUpperCase() || "USER"}!
+</h1>
 
           <p className="text-[#90a1aa]">
             Discover today's picks — hand-curated products across

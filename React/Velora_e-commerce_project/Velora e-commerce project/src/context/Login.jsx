@@ -16,9 +16,11 @@ const Login = ({ children }) => {
   const [LoginState, setLoginState] = useState(
     JSON.parse(localStorage.getItem("LoginState")) || false,
   );
-
   useEffect(() => {
     setdata(JSON.parse(localStorage.getItem("loggedIndUser")));
+  }, []);
+  console.log('data',data);
+  useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
     localStorage.setItem("detail", JSON.stringify(detail));
     localStorage.setItem("LoginState", JSON.stringify(LoginState));

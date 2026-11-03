@@ -13,7 +13,7 @@ import {
   X,
 } from "lucide-react";
 import Cart from "./Cart";
-import { login } from "../context/Login";
+import Login, { login } from "../context/Login";
 import { user } from "../context/UserCart";
 import { toast } from "react-toastify";
 const Navbar = () => {
@@ -28,6 +28,7 @@ const Navbar = () => {
   };
 
   const logout = () => {
+    console.log(data)
 
     toast.success("Logout successful!");
     setLoginState(false);
@@ -71,7 +72,7 @@ const Navbar = () => {
           // className="cursor-pointer flex text-[#B8C5F0] transition-colors border rounded-2xl border-amber-200 p-2 hover:text-white"
           className="cursor-pointer flex items-center gap-2 rounded-2xl border border-[#37316B] bg-[#11152B] p-2 text-[#B8C5F0] transition-all duration-300 hover:border-[#C4B4FF] hover:bg-[#1B1A36] hover:text-white"
         >
-          <UserRound size={20} /> {data.name}
+          <UserRound size={20} /> {data?.name || "Guest"}
         </button>
 
         <button
