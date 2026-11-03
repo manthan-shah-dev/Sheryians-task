@@ -17,7 +17,7 @@ const Login = ({ children }) => {
     JSON.parse(localStorage.getItem("LoginState")) || false,
   );
   useEffect(() => {
-    setdata(JSON.parse(localStorage.getItem("loggedIndUser")));
+    setdata(JSON.parse(localStorage.getItem("detail")));
   }, []);
   console.log('data',data);
   useEffect(() => {
