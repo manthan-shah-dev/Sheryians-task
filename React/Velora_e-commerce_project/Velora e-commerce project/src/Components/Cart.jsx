@@ -11,6 +11,7 @@ import {
 import { NavLink } from "react-router";
 import { user } from "../context/UserCart";
 import { login } from "../context/Login";
+import { toast } from "react-toastify";
 
 const Cart = ({ isCartOpen }) => {
   const cartclose = () => {
@@ -18,8 +19,14 @@ const Cart = ({ isCartOpen }) => {
   };
   const { products, setfirstproducts, totalprice, settotalprice } =
     useContext(user);
-  const { users, form, setform, detail, setdetail, LoginState, setLoginState } =
-    useContext(login);
+
+
+    const checkout=(val)=>{
+    setfirstproducts([]);
+toast.success(
+  val ? "Order placed successfully!" : "Cart cleared successfully!"
+);
+    }
 
   const inupdatecount = (product) => {
     const newproduct = products.map((val) =>
@@ -79,7 +86,7 @@ const Cart = ({ isCartOpen }) => {
             onClick={cartclose}
             type="button"
             aria-label="Close cart"
-            className="text-slate-400 transition-colors hover:text-[#C4B4FF]"
+            className="cursor-pointer text-slate-400 transition-colors hover:text-[#C4B4FF]"
           >
             <X size={20} />
           </button>
@@ -197,7 +204,9 @@ const Cart = ({ isCartOpen }) => {
               <button
                 type="button"
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-violet-500 hover:shadow-lg hover:shadow-violet-500/20"
-              >
+            onClick={()=>checkout(true)}
+       
+            >
                 Checkout
                 <ArrowRight size={17} />
               </button>
@@ -206,7 +215,10 @@ const Cart = ({ isCartOpen }) => {
               <button
                 type="button"
                 className="mt-3 w-full text-xs text-slate-500 transition hover:text-red-400"
-              >
+                       onClick={()=>checkout(false)}
+
+           
+           >
                 Clear cart
               </button>
             </div>

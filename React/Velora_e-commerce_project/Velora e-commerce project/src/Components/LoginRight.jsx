@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router";
 import { login } from "../context/Login";
+import { toast } from "react-toastify";
 
 const LoginRight = () => {
   const Navigate = useNavigate();
@@ -25,24 +26,24 @@ const LoginRight = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const obj = {
       emailform,
       passwordform,
     };
-
+    
     const data = users.find((val) => val.emailform === emailform);
-
+    
     const emailform2 = detail.emailform;
     const password = detail.passwordform;
     console.log("email", emailform2);
     if (!data) {
-      console.log("No user found");
+              toast.error("No user found");
       setLoginState(false);
     } else if (data.passwordform !== passwordform) {
-      console.log("Incorrect password");
+           toast.error("Incorrect password");
       setLoginState(false);
     } else {
+      toast.success("Login successful!");
       setLoginState(true);
       setdetail(data);
 

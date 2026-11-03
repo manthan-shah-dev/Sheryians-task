@@ -2,6 +2,7 @@ import { Zap, UserRound, Mail, Lock, Eye, ArrowRight } from "lucide-react";
 import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { login } from "../context/Login";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { users, setUsers } = useContext(login);
@@ -18,12 +19,12 @@ const Register = () => {
     const userExists = users.some((user) => user.emailform === emailform);
 
     if (userExists) {
-      alert("You are already registered! Please Login.");
+      toast.warning("You are already registered! Please login.");
       navigate("/login");
       return;
     }
     if (confirmpassword !== passwordform) {
-      alert("Passwords do not match!");
+      toast.error("Passwords do not match!");
       return;
     }
 
@@ -38,6 +39,7 @@ const Register = () => {
     );
 
     if (result) {
+      toast.success("Registration successful!");
       navigate("/login");
     }
   };

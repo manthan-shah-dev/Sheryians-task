@@ -5,28 +5,25 @@ export const user = createContext();
 
 const UserCart = ({ children }) => {
   const { detail } = useContext(login);
-
-  // Store all users' carts
   const [allCarts, setAllCarts] = useState(
     JSON.parse(localStorage.getItem("allCarts")) || {},
   );
 
   const email = detail?.emailform;
 
-  // Get only the logged-in user's products
   const products = email ? allCarts[email] || [] : [];
 
+  let totalproducts = products.length;
   // Calculate current user's total price
   const totalprice = products.reduce(
     (prev, val) => prev + (val.totalprice ?? 0),
     0,
   );
 
-  // Save all users' carts
   useEffect(() => {
     localStorage.setItem("allCarts", JSON.stringify(allCarts));
   }, [allCarts]);
-
+  console.log("totalproducts", totalproducts);
   // Update current user's cart
   const setfirstproducts = (updatedProducts) => {
     if (!email) return;
@@ -43,6 +40,7 @@ const UserCart = ({ children }) => {
   return (
     <user.Provider
       value={{
+        totalproducts,
         products,
         setfirstproducts,
         totalprice: Number(totalprice.toFixed(2)),

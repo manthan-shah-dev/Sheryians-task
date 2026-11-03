@@ -1,23 +1,24 @@
-
 import { createContext, useEffect, useState } from "react";
 
 export const login = createContext();
 
 const Login = ({ children }) => {
+  const [data, setdata] = useState({});
   const [form, setform] = useState({});
   const [users, setUsers] = useState(
-    JSON.parse(localStorage.getItem("users")) || []
+    JSON.parse(localStorage.getItem("users")) || [],
   );
 
   const [detail, setdetail] = useState(
-    JSON.parse(localStorage.getItem("detail")) || {}
+    JSON.parse(localStorage.getItem("detail")) || {},
   );
 
   const [LoginState, setLoginState] = useState(
-    JSON.parse(localStorage.getItem("LoginState")) || false
+    JSON.parse(localStorage.getItem("LoginState")) || false,
   );
 
   useEffect(() => {
+    setdata(JSON.parse(localStorage.getItem("loggedIndUser")));
     localStorage.setItem("users", JSON.stringify(users));
     localStorage.setItem("detail", JSON.stringify(detail));
     localStorage.setItem("LoginState", JSON.stringify(LoginState));
@@ -26,6 +27,7 @@ const Login = ({ children }) => {
   return (
     <login.Provider
       value={{
+        data,
         form,
         setform,
         users,

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { login } from "../context/Login";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const DeleteAccount = () => {
   const { users, setUsers } = useContext(login);
@@ -18,7 +19,7 @@ const DeleteAccount = () => {
     );
 
     if (!userExists) {
-      alert("Name or Email is incorrect!");
+toast.error("Name or Email is incorrect!");
       return;
     }
 
@@ -31,7 +32,7 @@ const DeleteAccount = () => {
         ),
       );
 
-      alert("Account deleted successfully!");
+    toast.success("Account deleted successfully!");
       navigate("/register");
     }
   };
