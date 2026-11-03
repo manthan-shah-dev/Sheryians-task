@@ -24,33 +24,26 @@ const LoginRight = () => {
   const [passwordform, setpasswordform] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const obj = {
-      emailform,
-      passwordform,
-    };
-    
-    const data = users.find((val) => val.emailform === emailform);
-    
-    const emailform2 = detail.emailform;
-    const password = detail.passwordform;
-    console.log("email", emailform2);
-    if (!data) {
-              toast.error("No user found");
-      setLoginState(false);
-    } else if (data.passwordform !== passwordform) {
-           toast.error("Incorrect password");
-      setLoginState(false);
-    } else {
-      toast.success("Login successful!");
-      setLoginState(true);
-      setdetail(data);
+ const handleSubmit = (event) => {
+  event.preventDefault();
 
-      console.log("Login successful:", data);
-      Navigate("/");
-    }
-  };
+  const data = users.find((val) => val.emailform === emailform);
+
+  if (!data) {
+    toast.error("No user found");
+    setLoginState(false);
+  } else if (data.passwordform !== passwordform) {
+    toast.error("Incorrect password");
+    setLoginState(false);
+  } else {
+    toast.success("Login successful!");
+    setLoginState(true);
+    setdetail(data);
+
+    console.log("Login successful:", data);
+    Navigate("/");
+  }
+};
   return (
     <section className="flex min-h-screen items-center justify-center px-5 py-8 sm:px-8 lg:min-h-0 lg:px-10 lg:py-8 xl:px-12">
       <div className="w-full max-w-[540px] rounded-[26px] border border-[#27233C] bg-[#0D1020] px-6 py-7 sm:px-8 sm:py-8 lg:px-9 lg:py-8">
